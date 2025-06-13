@@ -11,6 +11,9 @@ echo $my_boolean . "<br/>";
 
 const NAME = "Cristina";
 echo "<h1>" . NAME . "</h1>";
+
+define("NOMBRE", "Cristina");
+echo "<h1>" . NOMBRE . "</h1>";
 ?>
 
 <h3>Ejercicio 2</h3>
@@ -49,7 +52,7 @@ echo "El doble de cada variable es: ". ($X*$X) . "\n" . ($Y*$Y) . "\n" . ($N*$N)
 echo "La suma de todas las variable es: ". ($X+$Y+$N+$M) . "<br/>";
 echo "El producto de todas las variable es: ". ($X*$Y*$N*$M) . "<br/>";
 
-function calculadora($num1, $num2, $op) {
+function calcular($num1, $num2, $op) {
     $resultado = 0;
     if ($op == '+') {
         $resultado = $num1 + $num2;
@@ -68,25 +71,28 @@ function calculadora($num1, $num2, $op) {
 $num1 = 2;
 $num2 = 4;
 $op = '/';
-echo calculadora($num1, $num2, $op) . "\n";
+echo calcular($num1, $num2, $op) . "\n";
 ?>
 
 <h3>Ejercicio 4</h3>
 <?php
+$num = 10;
+$paso = 1;
 function contar($num, $paso) {
+    if (empty($num) || ($num < 0)) {
+        global $num; 
+    }    
+    if (empty($paso) || ($paso < 1)) {
+        global $paso; 
+    }
     for ($i = 0; $i <= $num; $i += $paso) {
-        if ($num == null) {
-            $num = 10;
-            echo "El valor de i es: $i <br/>";
-        } else {
-            echo "El valor de i es: $i <br/>";
-        }    
+        echo "El valor de i es: $i <br/>";
     }
 }
-$num = 20; 
-$paso = 1; 
-contar($num, $paso); 
-contar(null, 2); 
+contar($num, $paso);
+contar(-10, 2);
+contar(20, 3);
+contar(15, null);
 ?>
 
 <h3>Ejercicio 5</h3>

@@ -34,25 +34,32 @@ abstract class Shape {
         $this->altura = $altura;
     }
     abstract public function calcularArea();
-         
+    
+    public function mostrarArea() {
+        echo "El área es: " . $this->calcularArea() . "<br>";
+    }
 }
 class Rectangle extends Shape {
     public function calcularArea() {
         return $this->anchura * $this->altura;
     }
 
+    /*
     public function mostrarArea() {
         echo "El área del rectángulo es: " . $this->calcularArea() . "<br>";
     }
+    */
 }
 class Triangle extends Shape {
     public function calcularArea() {
         return ($this->anchura * $this->altura) / 2;
     }
 
+    /*
     public function mostrarArea() {
         echo "El área del triángulo es: " . $this->calcularArea() . "<br>";
     }
+    */
 }
 $miRectangulo = new Rectangle(25, 50);
 $miRectangulo->mostrarArea();
