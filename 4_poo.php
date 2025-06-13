@@ -49,8 +49,8 @@ class Triangle extends Shape {
         return ($this->anchura * $this->altura) / 2;
     }
 }
-$miRectangulo = new Rectangle(25, 50);
+$miRectangulo = new Rectangle(20, 50);
 $miRectangulo->mostrarArea();
-$miTriangulo = new Triangle(30, 10);
+$miTriangulo = new Triangle(35, 10);
 $miTriangulo->mostrarArea();
 ?>           
